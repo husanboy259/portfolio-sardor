@@ -1,16 +1,31 @@
-import React from 'react';
-import { Router } from 'react-router-dom';
-
-import GlobalStyles from './assets/styles/global';
-import Routes from './routes';
-import history from './routes/history';
+import React, { useState } from 'react';
+import './App.css';
+import Cursor from './components/Cursor';
+import Loader from './components/Loader';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 export default function App() {
-  return (
-    <Router history={history}>
-      <GlobalStyles />
+  const [loaded, setLoaded] = useState(false);
 
-      <Routes />
-    </Router>
+  return (
+    <>
+      <Cursor />
+      {!loaded && <Loader onDone={() => setLoaded(true)} />}
+      <div className={`app${loaded ? ' app--visible' : ''}`}>
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 }
