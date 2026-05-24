@@ -3,7 +3,7 @@ import './Contact.css';
 import useScrollReveal from '../hooks/useScrollReveal';
 
 async function sendToTelegram({ name, email, message }) {
-  const res = await fetch('http://localhost:3001/contact', {
+  const res = await fetch('https://portfolio-sardor-bot.onrender.com/contact', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, email, message }),
