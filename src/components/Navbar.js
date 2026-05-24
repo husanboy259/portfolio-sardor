@@ -23,8 +23,8 @@ export default function Navbar() {
     <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
       <div className="navbar__inner">
         <a href="#hero" className="navbar__logo" onClick={e => scrollTo(e, 'hero')}>
-          <div className="navbar__logo-icon">S</div>
-          Sardor
+          <div className="navbar__logo-icon">W</div>
+          Wentric
         </a>
 
         <ul className={`navbar__links${menuOpen ? ' navbar__links--open' : ''}`}>
@@ -35,7 +35,7 @@ export default function Navbar() {
           ))}
           <li>
             <a href="#contact" className="navbar__cta" onClick={e => scrollTo(e, 'contact')}>
-              Hire Me
+              Work With Us
             </a>
           </li>
         </ul>

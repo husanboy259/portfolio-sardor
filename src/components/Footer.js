@@ -6,11 +6,11 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer__inner">
         <div className="footer__brand">
-          <div className="footer__brand-icon">S</div>
-          Sardor
+          <div className="footer__brand-icon">W</div>
+          Wentric
         </div>
         <p className="footer__copy">
-          &copy; {new Date().getFullYear()} Sardor — Full Stack Developer
+          &copy; {new Date().getFullYear()} Wentric — Digital Product Studio
         </p>
         <div className="footer__top">
           <a href="#hero" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>

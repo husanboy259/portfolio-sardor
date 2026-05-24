@@ -53,28 +53,29 @@ export default function About() {
     <section id="about" className="about">
       <div className="about__inner">
         <div ref={headRef} className={`about__head reveal-up${headVisible ? ' revealed' : ''}`}>
-          <div className="section-label">About Me</div>
-          <h2 className="section-title">Who I <span>Am</span></h2>
+          <div className="section-label">About Us</div>
+          <h2 className="section-title">Who We <span>Are</span></h2>
         </div>
 
         <div className="about__grid">
           <div ref={textRef} className={`about__text reveal-left${textVisible ? ' revealed' : ''}`}>
             <p>
-              I'm <strong>Sardor</strong>, a Full Stack Developer from Uzbekistan passionate
-              about building products that are fast, reliable, and enjoyable to use.
+              <strong>Wentric</strong> is a digital product studio based in Uzbekistan,
+              building fast, reliable, and beautifully crafted web applications for
+              businesses and startups worldwide.
             </p>
             <p>
-              I work across the full stack — crafting responsive UIs with React and
-              designing RESTful APIs backed by robust databases. I care deeply about
-              code quality, performance, and user experience.
+              We work across the full stack — from pixel-perfect React interfaces to
+              robust Node.js backends and scalable cloud infrastructure. We care deeply
+              about code quality, performance, and real business impact.
             </p>
             <p>
-              When I'm not coding, I explore new tech, contribute to open-source,
-              and help others grow as developers.
+              Whether you need an MVP, a redesign, or a long-term tech partner —
+              we've got you covered.
             </p>
 
             <div className="about__tags">
-              {['🎯 Problem Solver', '⚡ Fast Learner', '🤝 Team Player', '🌍 Remote-ready'].map((t, i) => (
+              {['🎯 Result-Driven', '⚡ Fast Delivery', '🤝 Collaborative', '🌍 Remote-first'].map((t, i) => (
                 <span key={t} style={{ animationDelay: `${0.1 + i * 0.08}s` }}>{t}</span>
               ))}
             </div>

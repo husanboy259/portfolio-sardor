@@ -3,10 +3,10 @@ import './Hero.css';
 import Particles from './Particles';
 
 const ROLES = [
-  'Full Stack Developer',
-  'React Specialist',
-  'Node.js Engineer',
-  'UI/UX Enthusiast',
+  'Web Development Agency',
+  'UI/UX Design Studio',
+  'Full Stack Solutions',
+  'Digital Product Studio',
 ];
 
 function useTypewriter(words, speed = 80, pause = 1800) {
@@ -57,9 +57,9 @@ export default function Hero() {
   const [statsVisible, setStatsVisible] = useState(false);
   const statsRef = useRef(null);
 
-  const years = useCounter(2, 1500, statsVisible);
-  const projects = useCounter(20, 1800, statsVisible);
-  const clients = useCounter(10, 1600, statsVisible);
+  const years = useCounter(3, 1500, statsVisible);
+  const projects = useCounter(50, 1800, statsVisible);
+  const clients = useCounter(30, 1600, statsVisible);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -80,12 +80,12 @@ export default function Hero() {
         <div className="hero__content">
           <div className="hero__eyebrow animate-fade-down">
             <span className="hero__eyebrow-dot" />
-            Available for freelance work
+            Open for new projects
           </div>
 
           <h1 className="hero__title animate-fade-up" style={{ animationDelay: '0.1s' }}>
-            Hi, I'm
-            <span className="hero__title-accent"> Sardor</span>
+            We are
+            <span className="hero__title-accent"> Wentric</span>
           </h1>
 
           <p className="hero__role animate-fade-up" style={{ animationDelay: '0.2s' }}>
@@ -96,19 +96,19 @@ export default function Hero() {
           </p>
 
           <p className="hero__desc animate-fade-up" style={{ animationDelay: '0.3s' }}>
-            I craft high-performance web applications — from pixel-perfect interfaces
+            We build high-performance digital products — from pixel-perfect interfaces
             to scalable backend systems. Clean code, great UX, real results.
           </p>
 
           <div className="hero__actions animate-fade-up" style={{ animationDelay: '0.4s' }}>
             <button className="hero__btn hero__btn--primary" onClick={() => scrollTo('projects')}>
-              View Projects
+              View Our Work
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </button>
             <button className="hero__btn hero__btn--secondary" onClick={() => scrollTo('contact')}>
-              Contact Me
+              Get in Touch
             </button>
           </div>
 
@@ -135,7 +135,7 @@ export default function Hero() {
           <div className="hero__ring hero__ring--2" />
           <div className="hero__ring hero__ring--3" />
           <div className="hero__avatar">
-            <span>S</span>
+            <span>W</span>
           </div>
         </div>
       </div>
