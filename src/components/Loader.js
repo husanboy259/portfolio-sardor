@@ -24,7 +24,7 @@ export default function Loader({ onDone }) {
   return (
     <div className={`loader${hiding ? ' loader--hide' : ''}`}>
       <div className="loader__content">
-        <div className="loader__logo">W</div>
+        <img src="/logo.png" alt="Wentric" className="loader__logo" />
         <div className="loader__name">Wentric</div>
         <div className="loader__bar-wrap">
           <div className="loader__bar" style={{ width: `${progress}%` }} />

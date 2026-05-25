@@ -23,8 +23,7 @@ export default function Navbar() {
     <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
       <div className="navbar__inner">
         <a href="#hero" className="navbar__logo" onClick={e => scrollTo(e, 'hero')}>
-          <div className="navbar__logo-icon">W</div>
-          Wentric
+          <img src="/logo.png" alt="Wentric" className="navbar__logo-img" />
         </a>
 
         <ul className={`navbar__links${menuOpen ? ' navbar__links--open' : ''}`}>

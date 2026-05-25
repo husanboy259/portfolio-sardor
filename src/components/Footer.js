@@ -6,8 +6,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer__inner">
         <div className="footer__brand">
-          <div className="footer__brand-icon">W</div>
-          Wentric
+          <img src="/logo.png" alt="Wentric" className="footer__logo-img" />
         </div>
         <p className="footer__copy">
           &copy; {new Date().getFullYear()} Wentric — Digital Product Studio

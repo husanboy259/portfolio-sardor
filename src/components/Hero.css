@@ -141,12 +141,10 @@
   backdrop-filter: blur(10px);
 }
 
-.hero__badge-dot {
-  width: 20px; height: 20px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #4285f4, #34a853);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.58rem; font-weight: 900; color: #fff;
+.hero__badge-logo {
+  height: 20px;
+  width: auto;
+  object-fit: contain;
 }
 
 /* Microsoft big headline */
@@ -311,12 +309,11 @@
 }
 
 .hero__card-logo {
-  width: 44px; height: 44px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #4285f4, #34a853);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.3rem; font-weight: 900; color: #fff;
+  width: 80px;
+  height: auto;
+  object-fit: contain;
   margin-bottom: 14px;
+  display: block;
 }
 
 .hero__card-title {

@@ -24,17 +24,10 @@
   letter-spacing: -0.02em;
 }
 
-.footer__brand-icon {
-  width: 28px;
+.footer__logo-img {
   height: 28px;
-  border-radius: 6px;
-  background: linear-gradient(135deg, var(--accent), #0099cc);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  font-weight: 900;
-  color: #000;
+  width: auto;
+  object-fit: contain;
 }
 
 .footer__copy {

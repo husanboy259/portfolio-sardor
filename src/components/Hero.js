@@ -88,7 +88,7 @@ export default function Hero() {
         {/* ── LEFT: text ── */}
         <div className="hero__content">
           <div className="hero__badge animate-fade-down">
-            <div className="hero__badge-dot">W</div>
+            <img src="/logo.png" alt="Wentric" className="hero__badge-logo" />
             Open for new projects
           </div>
 
@@ -133,7 +133,7 @@ export default function Hero() {
 
           {/* Main card — projects overview */}
           <div className="hero__card hero__card--main">
-            <div className="hero__card-logo">W</div>
+            <img src="/logo.png" alt="Wentric" className="hero__card-logo" />
             <div className="hero__card-title">Wentric Studio</div>
             <div className="hero__card-sub">Project performance</div>
             <div className="hero__card-bar-wrap">
