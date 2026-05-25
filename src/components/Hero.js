@@ -9,7 +9,14 @@ const ROLES = [
   'Digital Product Studio',
 ];
 
-function useTypewriter(words, speed = 80, pause = 1800) {
+const CHIPS = [
+  { label: 'Web Development', color: 'blue' },
+  { label: 'UI/UX Design',    color: 'red'  },
+  { label: 'Cloud & APIs',    color: 'yellow' },
+  { label: 'Mobile Apps',     color: 'green' },
+];
+
+function useTypewriter(words, speed = 75, pause = 2000) {
   const [display, setDisplay] = useState('');
   const [wordIdx, setWordIdx] = useState(0);
   const [charIdx, setCharIdx] = useState(0);
@@ -24,7 +31,7 @@ function useTypewriter(words, speed = 80, pause = 1800) {
       timeout = setTimeout(() => setDeleting(true), pause);
     } else if (deleting && charIdx > 0) {
       timeout = setTimeout(() => setCharIdx(i => i - 1), speed / 2);
-    } else if (deleting && charIdx === 0) {
+    } else {
       setDeleting(false);
       setWordIdx(i => (i + 1) % words.length);
     }
@@ -43,8 +50,7 @@ function useCounter(target, duration = 1800, start = false) {
     const step = ts => {
       if (!startTime) startTime = ts;
       const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * target));
+      setCount(Math.floor((1 - Math.pow(1 - progress, 3)) * target));
       if (progress < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
@@ -57,14 +63,14 @@ export default function Hero() {
   const [statsVisible, setStatsVisible] = useState(false);
   const statsRef = useRef(null);
 
-  const years = useCounter(3, 1500, statsVisible);
+  const years    = useCounter(3,  1500, statsVisible);
   const projects = useCounter(50, 1800, statsVisible);
-  const clients = useCounter(30, 1600, statsVisible);
+  const clients  = useCounter(30, 1600, statsVisible);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setStatsVisible(true); },
-      { threshold: 0.5 }
+      { threshold: 0.4 }
     );
     if (statsRef.current) observer.observe(statsRef.current);
     return () => observer.disconnect();
@@ -74,68 +80,88 @@ export default function Hero() {
 
   return (
     <section id="hero" className="hero">
+      {/* Google 4-color top bar */}
+      <div className="hero__topbar" />
+
+      {/* Microsoft grid background */}
+      <div className="hero__grid-bg" />
+
+      {/* Google-style ambient orbs */}
+      <div className="hero__orb hero__orb--1" />
+      <div className="hero__orb hero__orb--2" />
+      <div className="hero__orb hero__orb--3" />
+
+      {/* Particle network */}
       <Particles />
 
       <div className="hero__inner">
-        <div className="hero__content">
-          <div className="hero__eyebrow animate-fade-down">
-            <span className="hero__eyebrow-dot" />
-            Open for new projects
-          </div>
 
-          <h1 className="hero__title animate-fade-up" style={{ animationDelay: '0.1s' }}>
-            We are
-            <span className="hero__title-accent"> Wentric</span>
-          </h1>
-
-          <p className="hero__role animate-fade-up" style={{ animationDelay: '0.2s' }}>
-            <span className="hero__typewriter">
-              {role}
-              <span className="hero__cursor">|</span>
-            </span>
-          </p>
-
-          <p className="hero__desc animate-fade-up" style={{ animationDelay: '0.3s' }}>
-            We build high-performance digital products — from pixel-perfect interfaces
-            to scalable backend systems. Clean code, great UX, real results.
-          </p>
-
-          <div className="hero__actions animate-fade-up" style={{ animationDelay: '0.4s' }}>
-            <button className="hero__btn hero__btn--primary" onClick={() => scrollTo('projects')}>
-              View Our Work
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </button>
-            <button className="hero__btn hero__btn--secondary" onClick={() => scrollTo('contact')}>
-              Get in Touch
-            </button>
-          </div>
-
-          <div className="hero__stats animate-fade-up" ref={statsRef} style={{ animationDelay: '0.5s' }}>
-            <div className="hero__stat">
-              <span className="hero__stat-num">{years}+</span>
-              <span className="hero__stat-label">Years Exp.</span>
-            </div>
-            <div className="hero__stat-divider" />
-            <div className="hero__stat">
-              <span className="hero__stat-num">{projects}+</span>
-              <span className="hero__stat-label">Projects</span>
-            </div>
-            <div className="hero__stat-divider" />
-            <div className="hero__stat">
-              <span className="hero__stat-num">{clients}+</span>
-              <span className="hero__stat-label">Clients</span>
-            </div>
-          </div>
+        {/* Google-style pill badge */}
+        <div className="hero__badge animate-fade-down">
+          <div className="hero__badge-dot">W</div>
+          Introducing Wentric — your digital partner
         </div>
 
-        <div className="hero__visual animate-fade-left" style={{ animationDelay: '0.3s' }}>
-          <div className="hero__ring hero__ring--1" />
-          <div className="hero__ring hero__ring--2" />
-          <div className="hero__ring hero__ring--3" />
-          <div className="hero__avatar">
-            <span>W</span>
+        {/* Microsoft-style massive headline */}
+        <h1 className="hero__title animate-fade-up" style={{ animationDelay: '0.1s' }}>
+          Build the future<br />with{' '}
+          <span className="hero__brand">Wentric</span>
+        </h1>
+
+        {/* Typewriter subtitle */}
+        <p className="hero__role animate-fade-up" style={{ animationDelay: '0.2s' }}>
+          <span className="hero__typewriter">{role}</span>
+          <span className="hero__cursor">|</span>
+        </p>
+
+        {/* Description */}
+        <p className="hero__desc animate-fade-up" style={{ animationDelay: '0.3s' }}>
+          We design and build high-performance digital products — from beautiful
+          interfaces to powerful backends. Trusted by startups and businesses worldwide.
+        </p>
+
+        {/* CTAs */}
+        <div className="hero__actions animate-fade-up" style={{ animationDelay: '0.4s' }}>
+          <button className="hero__btn hero__btn--primary" onClick={() => scrollTo('projects')}>
+            View Our Work
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+          <button className="hero__btn hero__btn--secondary" onClick={() => scrollTo('contact')}>
+            Get in Touch
+          </button>
+        </div>
+
+        {/* Google-style service chips */}
+        <div className="hero__chips animate-fade-up" style={{ animationDelay: '0.5s' }}>
+          {CHIPS.map(c => (
+            <span key={c.label} className={`hero__chip hero__chip--${c.color}`}>
+              <span className="hero__chip-dot" />
+              {c.label}
+            </span>
+          ))}
+        </div>
+
+        {/* Microsoft-style stats card */}
+        <div
+          className="hero__stats animate-scale-in"
+          ref={statsRef}
+          style={{ animationDelay: '0.6s' }}
+        >
+          <div className="hero__stat">
+            <span className="hero__stat-num">{years}+</span>
+            <span className="hero__stat-label">Years Active</span>
+          </div>
+          <div className="hero__stat-divider" />
+          <div className="hero__stat">
+            <span className="hero__stat-num">{projects}+</span>
+            <span className="hero__stat-label">Projects Done</span>
+          </div>
+          <div className="hero__stat-divider" />
+          <div className="hero__stat">
+            <span className="hero__stat-num">{clients}+</span>
+            <span className="hero__stat-label">Happy Clients</span>
           </div>
         </div>
       </div>
