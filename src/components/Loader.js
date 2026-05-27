@@ -24,8 +24,24 @@ export default function Loader({ onDone }) {
   return (
     <div className={`loader${hiding ? ' loader--hide' : ''}`}>
       <div className="loader__content">
-        <img src="/logo.png" alt="Wentric" className="loader__logo" />
-        <div className="loader__name">Wentric</div>
+
+        {/* Orbital sphere with H */}
+        <div className="loader__orb-scene">
+          <div className="loader__orb-ring loader__orb-ring--3">
+            <div className="loader__orb-dot loader__orb-dot--cyan" />
+          </div>
+          <div className="loader__orb-ring loader__orb-ring--2">
+            <div className="loader__orb-dot loader__orb-dot--purple" />
+          </div>
+          <div className="loader__orb-ring loader__orb-ring--1">
+            <div className="loader__orb-dot loader__orb-dot--orange" />
+          </div>
+          <div className="loader__orb-center">
+            <span className="loader__orb-letter">H</span>
+          </div>
+        </div>
+
+        <div className="loader__name">Husanboy</div>
         <div className="loader__bar-wrap">
           <div className="loader__bar" style={{ width: `${progress}%` }} />
         </div>

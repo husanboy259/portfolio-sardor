@@ -52,7 +52,7 @@ export default function Contact() {
         <div className="contact__grid">
           <div ref={infoRef} className={`contact__info reveal-left${infoVisible ? ' revealed' : ''}`}>
             {[
-              { icon: '📧', label: 'Email', val: 'hello@wentric.uz' },
+              { icon: '📧', label: 'Email', val: 'abdulazizov2013hh@gmail.com' },
               { icon: '📍', label: 'Location', val: 'Uzbekistan — remote worldwide' },
               { icon: '⏰', label: 'Response Time', val: 'Within 24 hours' },
             ].map((c, i) => (

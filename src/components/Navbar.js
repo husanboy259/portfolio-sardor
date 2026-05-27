@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 
-const links = ['About', 'Projects', 'Contact'];
+const links = ['About', 'Projects'];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,7 +23,7 @@ export default function Navbar() {
     <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
       <div className="navbar__inner">
         <a href="#hero" className="navbar__logo" onClick={e => scrollTo(e, 'hero')}>
-          <img src="/logo.png" alt="Wentric" className="navbar__logo-img" />
+          Husanboy
         </a>
 
         <ul className={`navbar__links${menuOpen ? ' navbar__links--open' : ''}`}>
@@ -32,11 +32,6 @@ export default function Navbar() {
               <a href={`#${link.toLowerCase()}`} onClick={e => scrollTo(e, link)}>{link}</a>
             </li>
           ))}
-          <li>
-            <a href="#contact" className="navbar__cta" onClick={e => scrollTo(e, 'contact')}>
-              Work With Us
-            </a>
-          </li>
         </ul>
 
         <button
