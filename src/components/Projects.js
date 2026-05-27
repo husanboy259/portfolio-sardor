@@ -3,13 +3,97 @@ import './Projects.css';
 import useScrollReveal from '../hooks/useScrollReveal';
 
 const projects = [
-  { id: 1, title: 'E-Commerce Platform', desc: 'Full-featured online store with product management, cart, and Stripe payments.', tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe'], accent: '#00d4ff', emoji: '🛒', github: '#', live: '#' },
-  { id: 2, title: 'Task Management App', desc: 'Real-time collaboration tool with drag-and-drop boards and team workspaces.', tags: ['React', 'Socket.io', 'MongoDB'], accent: '#ff6b35', emoji: '📋', github: '#', live: '#' },
-  { id: 3, title: 'REST API Service', desc: 'Scalable API with JWT auth, role-based access control, and rate limiting.', tags: ['Node.js', 'Express', 'JWT', 'PostgreSQL'], accent: '#a855f7', emoji: '⚙️', github: '#', live: '#' },
-  { id: 4, title: 'Portfolio CMS', desc: 'Headless CMS for dynamic portfolio content with rich text editor.', tags: ['React', 'TypeScript', 'REST API'], accent: '#10b981', emoji: '📁', github: '#', live: '#' },
-  { id: 5, title: 'Weather Dashboard', desc: 'Real-time weather app with forecasts, maps, and historical charts.', tags: ['React', 'Chart.js', 'OpenWeather API'], accent: '#f59e0b', emoji: '🌤️', github: '#', live: '#' },
-  { id: 6, title: 'Chat Application', desc: 'Real-time messaging with rooms, file sharing, and emoji reactions.', tags: ['React', 'Socket.io', 'Node.js'], accent: '#ec4899', emoji: '💬', github: '#', live: '#' },
+  {
+    id: 1,
+    title: 'Weather App',
+    desc: 'Real-time weather application with forecasts, location search, and clean modern UI.',
+    tags: ['React', 'Weather API', 'Vercel'],
+    accent: '#00d4ff',
+    emoji: '🌤️',
+    live: 'https://wheather-app-three-theta.vercel.app/',
+    github: null,
+    type: 'web',
+  },
+  {
+    id: 2,
+    title: 'MakerPay',
+    desc: 'Payment platform for Uzbekistan — fast, secure, and easy-to-use fintech solution.',
+    tags: ['Fintech', 'Payments', 'Web App'],
+    accent: '#10b981',
+    emoji: '💳',
+    live: 'https://makerpay.uz',
+    github: null,
+    type: 'web',
+  },
+  {
+    id: 3,
+    title: 'Aviago',
+    desc: 'Modern web application built and deployed on Vercel with a smooth user experience.',
+    tags: ['React', 'Node.js', 'Vercel'],
+    accent: '#a855f7',
+    emoji: '✈️',
+    live: 'https://aviago-web-wctj.vercel.app/',
+    github: null,
+    type: 'web',
+  },
+  {
+    id: 4,
+    title: 'MakerPay Bot',
+    desc: 'Telegram bot for MakerPay — manage payments, check balance, and transactions directly in Telegram.',
+    tags: ['Telegram Bot', 'Node.js', 'Payments'],
+    accent: '#00d4ff',
+    emoji: '🤖',
+    live: 'https://t.me/maketrpaybot',
+    github: null,
+    type: 'bot',
+  },
+  {
+    id: 5,
+    title: 'Yashil Uyim Bot',
+    desc: 'Telegram bot for Yashil Uyim — eco-friendly home solutions and green living assistant.',
+    tags: ['Telegram Bot', 'Python', 'Eco'],
+    accent: '#10b981',
+    emoji: '🌿',
+    live: 'https://t.me/yashiluyim1bot',
+    github: null,
+    type: 'bot',
+  },
+  {
+    id: 6,
+    title: 'Spiko Bot',
+    desc: 'Feature-rich Telegram bot with interactive commands, automation, and user management.',
+    tags: ['Telegram Bot', 'Node.js', 'Automation'],
+    accent: '#ff6b35',
+    emoji: '⚡',
+    live: 'https://t.me/spikobot1bot',
+    github: null,
+    type: 'bot',
+  },
+  {
+    id: 7,
+    title: 'Mini App Bot',
+    desc: 'Telegram Mini App bot — a full web app running inside Telegram with native UX.',
+    tags: ['Telegram', 'Mini App', 'React'],
+    accent: '#f59e0b',
+    emoji: '📱',
+    live: 'https://t.me/miniappbot1bot',
+    github: null,
+    type: 'bot',
+  },
 ];
+
+const TelegramIcon = () => (
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+  </svg>
+);
+
+const ExternalIcon = () => (
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+    <polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/>
+  </svg>
+);
 
 function ProjectCard({ p, index }) {
   const [ref, visible] = useScrollReveal({ threshold: 0.1 });
@@ -25,6 +109,9 @@ function ProjectCard({ p, index }) {
     >
       <div className="pcard__top">
         <span className="pcard__emoji">{p.emoji}</span>
+        {p.type === 'bot' && (
+          <span className="pcard__badge">Telegram Bot</span>
+        )}
         <div className="pcard__glow" />
       </div>
 
@@ -37,19 +124,17 @@ function ProjectCard({ p, index }) {
         </div>
 
         <div className="pcard__links">
-          <a href={p.github} className="pcard__link">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
-            </svg>
-            GitHub
-          </a>
-          <a href={p.live} className="pcard__link pcard__link--live">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-            Live Demo
-          </a>
+          {p.type === 'bot' ? (
+            <a href={p.live} target="_blank" rel="noopener noreferrer" className="pcard__link pcard__link--live">
+              <TelegramIcon />
+              Open Bot
+            </a>
+          ) : (
+            <a href={p.live} target="_blank" rel="noopener noreferrer" className="pcard__link pcard__link--live">
+              <ExternalIcon />
+              Live Demo
+            </a>
+          )}
         </div>
       </div>
 
@@ -60,6 +145,8 @@ function ProjectCard({ p, index }) {
 
 export default function Projects() {
   const [headRef, headVisible] = useScrollReveal();
+  const webProjects = projects.filter(p => p.type === 'web');
+  const botProjects = projects.filter(p => p.type === 'bot');
 
   return (
     <section id="projects" className="projects">
@@ -67,11 +154,17 @@ export default function Projects() {
         <div ref={headRef} className={`projects__head reveal-up${headVisible ? ' revealed' : ''}`}>
           <div className="section-label">My Work</div>
           <h2 className="section-title">Featured <span>Projects</span></h2>
-          <p className="projects__sub">A selection of things I've built — from idea to deployment.</p>
+          <p className="projects__sub">Real projects I've built — from web apps to Telegram bots.</p>
         </div>
 
+        <div className="projects__category-label">🌐 Web Apps</div>
         <div className="projects__grid">
-          {projects.map((p, i) => <ProjectCard key={p.id} p={p} index={i} />)}
+          {webProjects.map((p, i) => <ProjectCard key={p.id} p={p} index={i} />)}
+        </div>
+
+        <div className="projects__category-label" style={{ marginTop: '48px' }}>🤖 Telegram Bots</div>
+        <div className="projects__grid">
+          {botProjects.map((p, i) => <ProjectCard key={p.id} p={p} index={i} />)}
         </div>
       </div>
     </section>

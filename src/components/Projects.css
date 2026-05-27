@@ -177,5 +177,42 @@
 .pcard__link--live { color: var(--accent); }
 .pcard__link--live:hover { opacity: 0.75; color: var(--accent); }
 
+/* Category label */
+.projects__category-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.projects__category-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Bot badge on card */
+.pcard__badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  color: #00d4ff;
+  padding: 3px 8px;
+  border-radius: 99px;
+  z-index: 2;
+}
+
 @media (max-width: 960px) { .projects__grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 580px) { .projects__grid { grid-template-columns: 1fr; } }
